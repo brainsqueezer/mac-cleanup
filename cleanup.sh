@@ -93,6 +93,12 @@ if [ -d "/Users/${HOST}/.gradle/caches" ]; then
     rm -rfv ~/.gradle/caches/ &> /dev/null
 fi
 
+if [ -d "/Users/${HOST}/.android//build-cache" ]; then
+    echo 'Cleanup Android build cache...'
+    rm -rf ~/.android/build-cache/* &> /dev/null
+fi
+
+
 if type "composer" &> /dev/null; then
     echo 'Cleanup composer...'
     composer clearcache &> /dev/null
